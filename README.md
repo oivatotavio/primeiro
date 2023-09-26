@@ -12,3 +12,5 @@ Esse é o começo do meu portfólio, aos poucos novas idéias e realizações ap
 |-------|--------|
 | Linha |  |
 |  |  |
+
+**Essa foi uma alteração feita localmente!**
