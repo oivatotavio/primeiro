@@ -43,3 +43,7 @@ for (let i = 0; i < lista.length; i++) {
     }
     
 }
+
+//podemos substituir esse for pelo uso do metodo filter, que toda lista tem
+listaDeNumerosPares = lista.filter ((numero) => { return (numero % 2 === 0)} )
+console.log(listaDeNumerosPares)
