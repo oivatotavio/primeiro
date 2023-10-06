@@ -38,7 +38,8 @@ let lista= [2, 3, 4, 5, 6, 7, 8, 9, 0 ];
 for (let i = 0; i < lista.length; i++) {
     const numero = lista[i];
     if ((numero % 2) === 0) {
-        console.log(numero , ' é par!');
+        console.log(`${numero}  é par!`); /* usando ` ` no lugar de ' ' eu posso imprimir o texto do jeito q foi escrito no código
+                                         e usar ${ } para imprimir o conteúdo de uma variável sem precisar usar o operador de concatenação + ou , */
     }
     
 }

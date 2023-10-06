@@ -1,6 +1,6 @@
 
 const pokeApi = {}
-
+//pega os dados coletados do site pokeApi e grava em uma instancia da classe pokemon (classe definida em pokemonModel.js)
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
     pokemon.number = pokeDetail.id
@@ -17,12 +17,14 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     return pokemon
 }
 
+//acessa a url do site pokeApi
 pokeApi.getPokemonDetail = (pokemon) => {
     return fetch(pokemon.url)
         .then((response) => response.json())
         .then(convertPokeApiDetailToPokemon)
 }
 
+//coleta os dados do site pokeApi
 pokeApi.getPokemons = (offset = 0, limit = 5) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 
