@@ -11,13 +11,14 @@ const state = {
     values: {        
         hitPosition: 0,
         result: 0,
-        currentTime: 5,
-        livesLeft: 3
+        currentTime: 600,
+        livesLeft: 3,
+        activeBGM: false,
     },
     actions: {
         timerId:setInterval(randomSquare, 1000),
         countDownTimerId: setInterval(countDown, 1000),
-        toggleBGM: document.querySelector("BGM")
+        
     }
 };
 
@@ -54,8 +55,6 @@ function randomSquare(){
     state.values.hitPosition = randomSquare.id;
 }
 
-
-
 function addListenerHitBox(){
     state.view.squares.forEach((square)=> {
         square.addEventListener("mousedown", ()=>{
@@ -75,12 +74,23 @@ function addListenerHitBox(){
 }
 
 function initialize() {
+
+    const button = document.getElementById("BGM");
+    button.addEventListener("click", ()=>{
+        let BGM = new Audio (`./src/audios/BGM.mp3`)
+        if (state.values.activeBGM === false){
+            BGM.volume = 0.1;
+            BGM.play();
+            BGM.loop = true;
+            state.values.activeBGM = true;
+        }else{
+            BGM.pause();
+            state.values.activeBGM = false;
+        }
+    })
     
-    let BGM = new Audio (`./src/audios/BGM.mp3`)
-    BGM.volume = 0.1;
-    BGM.play();
-    BGM.loop = true;
     addListenerHitBox();
+    
 }
 
 initialize();
