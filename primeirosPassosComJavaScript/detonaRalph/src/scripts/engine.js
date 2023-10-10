@@ -1,4 +1,4 @@
-const container = document.getElementsByClassName("container")
+
 
 const state = {
     view: {
@@ -17,6 +17,7 @@ const state = {
     actions: {
         timerId:setInterval(randomSquare, 1000),
         countDownTimerId: setInterval(countDown, 1000),
+        toggleBGM: document.querySelector("BGM")
     }
 };
 
@@ -74,7 +75,7 @@ function addListenerHitBox(){
 }
 
 function initialize() {
-    confirm("start?")
+    
     let BGM = new Audio (`./src/audios/BGM.mp3`)
     BGM.volume = 0.1;
     BGM.play();
