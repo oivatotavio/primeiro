@@ -65,7 +65,7 @@ function checkMatch() {
 
 function victoryCondition(){
     if (document.querySelectorAll(".boxMatch").length === emojis.length) {
-        alert(`Você venceu !\nSeu tempo foi\n ${matchTime}`);
+        alert(`         Você venceu !\n         Seu tempo foi\n             ${matchTime}`);
         window.location.reload()
     }
 }
