@@ -12,7 +12,7 @@ const state = {
     values: {        
         hitPosition: 0,
         result: 0,
-        currentTime: 6,
+        currentTime: 60,
         livesLeft: 3,
         activeBGM: 0,
     },
